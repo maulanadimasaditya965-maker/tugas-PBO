@@ -1,0 +1,166 @@
+<!DOCTYPE html> <!-- Mendefinisikan tipe dokumen HTML5 -->
+<html lang="id"> <!-- Elemen utama halaman, dengan bahasa Indonesia -->
+ 
+<head>
+  <meta charset="UTF-8"> <!-- Set karakter encoding ke UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsif untuk perangkat mobile -->
+  <title>Rumah Sakit</title> <!-- Judul tab browser -->
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Import font Poppins -->
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script> <!-- Library ikon Feather -->
+
+  <link rel="stylesheet" href="dia 1.css"> <!--Link ke file CSS eksternal-->
+  <style>
+    #gatau {
+  max-width: 600px;                 /* Lebar maksimum hasil */
+  margin: 30px auto;                /* Tengah dan jarak dari atas */
+  background-color: #ffffff;        /* Latar putih */
+  border-left: 6px solid #6c63ff;   /* Garis warna di kiri */
+  padding: 20px 30px;               /* Padding dalam */
+  border-radius: 8px;               /* Sudut membulat */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Bayangan halus */
+  color: #333;                      /* Warna teks */
+}
+
+#gatau h2 {
+  margin-top: 0;                    /* Hilangkan margin atas */
+  color: #6c63ff;                   /* Warna judul biru */
+  font-size: 20px;                  /* Ukuran judul */
+  border-bottom: 1px solid #eee;    /* Garis bawah abu muda */
+  padding-bottom: 10px;             /* Jarak ke bawah */
+}
+
+#gatau p {
+  margin: 8px 0;                    /* Jarak atas dan bawah */
+  line-height: 1.5;                 /* Jarak antar baris */
+}
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- ==================== Navbar ==================== -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">Rumah Sakit</a>
+
+    <div class="navbar-nav">
+      <a href="Home.html">Home</a>
+      <a href="Tentang Kami.html">Tentang Kami</a>
+      <a class="tombol" href="Layanan.html">Layanan</a>
+      <a href="Kontak.html">Kontak</a>
+      <a href="Raisya.html">Biodata</a>
+    </div>
+  </nav>
+
+  <!-- ==================== Formulir ==================== -->
+  <div class="Formulir">
+    <h1 style="text-transform: uppercase; text-align:center;">
+      Formulir Pendaftaran Pasien
+    </h1>
+
+    <script>
+    var yakin= confirm("apakah kamu yakin ingin membuka form di page ini ?");
+        if (yakin) {
+            alert('selamat membuat form sendiri');
+        } else {
+        window.location = "https://id.wikipedia.org/wiki/Elizabeth_I_dari_Inggris";
+        }
+</script>
+
+    <!-- Form input -->
+    <form id="FormSaya">
+      <!-- <label>Nama Kamu:</label> -->
+      <script>
+        var nama = prompt("Apa yang Mau Kamu Minta ?", "Contoh (Nama Lengkap :)");
+        document.write("<p><b>"+ nama +"</b></p>");
+    </script>
+<input type="text" id="saya" required>
+
+    <script>
+        var tanggal_lahir= prompt("Apa yang Mau Kamu Minta ?", "Contoh (Umur :)");
+        document.write("<p><b>"+ tanggal_lahir +"</b></p>");
+    </script>
+      <input type="text" id="paw" required>
+      
+      <script>
+        var Alamat = prompt("Apa yang Mau Kamu Minta ?", "Contoh (Alamat :)");
+        document.write("<p><b>"+ Alamat +"</b></p>");
+    </script>
+<input type="text" id="pow" required>
+
+      <script>
+        var jenis_kelamin= prompt("Mau diisi apa?", "Contoh (Jenis Kelamin :)");
+        document.write("<p><b>"+ jenis_kelamin +"</b></p>");
+    </script>
+      <input type="text" id="piw" required>
+
+    <script>
+        var goldar= prompt("Mau diisi apa?", "Contoh (Golongan Darah :)");
+        document.write("<p><b>"+ goldar +"</b></p>");
+    </script>
+      <input type="text" id="puw" required>
+
+      <script>
+        var kontak_darurat= prompt("Mau diisi apa?", "Contoh (Kontak Darurat :)");
+        document.write("<p><b>"+ kontak_darurat +"</b></p>");
+    </script>
+      <input type="number" id="pew" required>
+
+      <script>
+        var diagnosis= prompt("Mau diisi apa?", "Contoh (Diagnosis :)");
+        document.write("<p><b>"+ diagnosis +"</b></p>");
+    </script>
+      <input type="text" id="aaa" required>
+
+      <script>
+        var no_identitas= prompt("Mau diisi apa?", "Contoh (No. Identitas :)");
+        document.write("<p><b>"+ no_identitas +"</b></p>");
+    </script>
+      <input type="number" id="iii" required>
+
+      <button type="submit">Kirim</button>
+     </form>
+
+  <!-- ==================== Hasil Output ==================== -->
+  <div id="gatau" style="display:none;"></div>
+
+  <!-- ==================== Script JavaScript ==================== -->
+  <script>
+    const form = document.getElementById("FormSaya");
+    const hasil = document.getElementById("gatau");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Mencegah halaman reload saat form disubmit
+
+      // Ambil nilai dari semua input
+      const nama = document.getElementById("saya").value;
+      const tanggal_lahir = document.getElementById("paw").value;
+      const jenis_kelamin = document.getElementById("piw").value;
+      const goldar = document.getElementById("puw").value;
+      const kontak_darurat = document.getElementById("pew").value;
+      const Alamat = document.getElementById("pow").value;
+      const diagnosis = document.getElementById("aaa").value;
+      const no_identitas = document.getElementById("iii").value;
+
+      // Tampilkan data dalam elemen hasil
+      hasil.style.display = "block";
+      hasil.innerHTML = `
+        <h2>DATA PRIBADI</h2>
+        <p><b>Nama Lengkap: </b> ${nama}</p>
+        <p><b>Tanggal Dihidupkan: </b> ${tanggal_lahir} </p>
+        <p><b>Tempat Hidup: </b> ${Alamat} </p>
+        <p><b>Ce/co?: </b> ${jenis_kelamin} </p>
+        <p><b>Darahhh: </b> ${goldar} ta</p>
+        <p><b>Kontakk: </b> ${kontak_darurat} </p>
+        <p><b>Keluhan: </b> ${diagnosis} </p>
+        <p><b>No. KTP: </b> ${no_identitas} </p>
+      `;
+    });
+  </script>
+</body>
+</html>
